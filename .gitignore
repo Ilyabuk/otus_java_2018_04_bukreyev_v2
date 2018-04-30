@@ -1,0 +1,12 @@
+#idea
+.idea*
+*.iml
+
+#Mac
+*.DS_Store
+
+#java
+/target/
+
+#Mvn
+**/log/
