@@ -13,4 +13,30 @@
     <artifactId>L03-02</artifactId>
     <packaging>ejb</packaging>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+               <configuration>
+                   <archive>
+                       <manifest>
+                            <addClasspath>true</addClasspath>
+                           <mainClass>ru.otus.App</mainClass>
+                       </manifest>
+                   </archive>
+               </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
