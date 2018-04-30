@@ -60,26 +60,26 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <archive>
-                        <manifestEntries>
-                            <Premain-class>ru.otus.L03.InstrumentationAgent</Premain-class>
-                            <Agent-class>ru.otus.L03.InstrumentationAgent</Agent-class>
-                        </manifestEntries>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>ru.otus.L03.InstrumentSampleObjects</mainClass>
-                        </manifest>
-                    </archive>
+                    <!--<archive>-->
+                        <!--<manifestEntries>-->
+                            <!--<Premain-class>ru.otus.L03.InstrumentationAgent</Premain-class>-->
+                            <!--<Agent-class>ru.otus.L03.InstrumentationAgent</Agent-class>-->
+                        <!--</manifestEntries>-->
+                        <!--<manifest>-->
+                            <!--<addClasspath>true</addClasspath>-->
+                            <!--<mainClass>ru.otus.L03.InstrumentSampleObjects</mainClass>-->
+                        <!--</manifest>-->
+                    <!--</archive>-->
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>make-assembly</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>single</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
             </plugin>
 
             <plugin>
