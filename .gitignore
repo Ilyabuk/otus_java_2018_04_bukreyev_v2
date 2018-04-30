@@ -6,7 +6,7 @@
 *.DS_Store
 
 #java
-/target/
+**/target/
 
 #Mvn
 **/log/

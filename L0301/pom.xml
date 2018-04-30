@@ -3,14 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>otus-java</artifactId>
         <groupId>otus-courses</groupId>
+        <artifactId>parent</artifactId>
         <version>1</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>L03-01</artifactId>
 
-    <packaging>L0301</packaging>
-    <name>L0301Lesson</name>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>otus-courses</groupId>
+    <artifactId>L03-01</artifactId>
+    <packaging>ejb</packaging>
 
 </project>

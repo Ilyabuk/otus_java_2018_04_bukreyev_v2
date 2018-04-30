@@ -1,3 +1,5 @@
+package ru.otus;
+
 /**
  * Created otusjava by Ilya on 4/27/18.
  */
