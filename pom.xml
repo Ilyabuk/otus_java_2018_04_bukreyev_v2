@@ -22,6 +22,8 @@
 
     <modules>
         <module>L0301</module>
+        <module>L0302</module>
+        <module>L0303</module>
     </modules>
 
     <dependencyManagement>
