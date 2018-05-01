@@ -16,46 +16,36 @@
 
     <build>
         <plugins>
-            <!--<plugin>-->
-                <!--<artifactId>maven-assembly-plugin</artifactId>-->
-                <!--<version>3.1.0</version>-->
-                <!--<configuration>-->
-                    <!--<archive>-->
-                        <!--<manifestEntries>-->
-                            <!--<Premain-class>ru.otus.InstrumentationAgent</Premain-class>-->
-                            <!--<Agent-class>ru.otus.InstrumentationAgent</Agent-class>-->
-                        <!--</manifestEntries>-->
-                        <!--<manifest>-->
-                            <!--<addClasspath>true</addClasspath>-->
-                            <!--<mainClass>ru.otus.App</mainClass>-->
-                        <!--</manifest>-->
-                    <!--</archive>-->
-                <!--</configuration>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>make-assembly</id>-->
-                        <!--<phase>package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>single</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
-
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
+                <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
                     <archive>
                         <manifestEntries>
                             <Premain-class>ru.otus.InstrumentationAgent</Premain-class>
+                            <Agent-class>ru.otus.InstrumentationAgent</Agent-class>
                         </manifestEntries>
                         <manifest>
                             <addClasspath>true</addClasspath>
+                            <mainClass>ru.otus.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
             </plugin>
 
             <plugin>
@@ -69,6 +59,7 @@
                         </manifest>
                         <manifestEntries>
                             <Premain-class>ru.otus.InstrumentationAgent</Premain-class>
+                            <Agent-class>ru.otus.InstrumentationAgent</Agent-class>
                         </manifestEntries>
                     </archive>
                 </configuration>
