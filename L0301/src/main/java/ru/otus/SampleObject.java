@@ -3,7 +3,6 @@ package ru.otus;
 /**
  * Created otusjava by Ilya on 4/30/18.
  */
-import static java.lang.System.inheritedChannel;
 import static java.lang.System.out;
 import java.math.BigDecimal;
 import java.util.ArrayList;

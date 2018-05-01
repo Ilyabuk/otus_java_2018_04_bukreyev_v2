@@ -53,13 +53,13 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
+            <!--<plugin>-->
+                <!--<artifactId>maven-assembly-plugin</artifactId>-->
+                <!--<version>3.1.0</version>-->
+                <!--<configuration>-->
+                    <!--<descriptorRefs>-->
+                        <!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
+                    <!--</descriptorRefs>-->
                     <!--<archive>-->
                         <!--<manifestEntries>-->
                             <!--<Premain-class>ru.otus.L03.InstrumentationAgent</Premain-class>-->
@@ -70,7 +70,7 @@
                             <!--<mainClass>ru.otus.L03.InstrumentSampleObjects</mainClass>-->
                         <!--</manifest>-->
                     <!--</archive>-->
-                </configuration>
+                <!--</configuration>-->
                 <!--<executions>-->
                     <!--<execution>-->
                         <!--<id>make-assembly</id>-->
@@ -80,7 +80,7 @@
                         <!--</goals>-->
                     <!--</execution>-->
                 <!--</executions>-->
-            </plugin>
+            <!--</plugin>-->
 
             <plugin>
                 <artifactId>maven-ejb-plugin</artifactId>
