@@ -27,7 +27,7 @@
                         </manifestEntries>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>ru.otus.App</mainClass>
+                            <mainClass>ru.otus.SampleObject</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
