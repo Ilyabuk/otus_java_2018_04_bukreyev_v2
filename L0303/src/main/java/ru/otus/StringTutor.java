@@ -1,12 +1,14 @@
 package ru.otus; /**
  * Created otusjava by Ilya on 4/27/18.
  */
-import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class StringTutor {
     /**
@@ -66,5 +68,32 @@ public class StringTutor {
                 checkGreeting("Привет, петр Первый!"));
         assertFalse("Первая буква фамилии должна быть заглавной",
                 checkGreeting("Привет, Петр первый!"));
+    }
+
+    public boolean checkGreeting2(String greeting) {
+        return greeting.matches("^Привет,\\s*[А-Я]{1}[а-я]{3,}\\s[А-Я]{1}[а-я]{3,}\\s*!");
+    }
+
+    @Test
+    public void testCheckGreeting2() {
+        assertTrue(checkGreeting2("Привет, Иван Иванов!"));
+        assertTrue(checkGreeting2("Привет,Петр Первый!"));
+        assertTrue(checkGreeting2("Привет, Петр Первый!"));
+        assertTrue(checkGreeting2("Привет, Петр Первый !"));
+
+        assertFalse("В начале должно быть слово Привет и запятая",
+                checkGreeting2("Здравствуйте, Петр Первый!"));
+        assertFalse("В конце должен быть восклицательный знак",
+                checkGreeting2("Привет, Петр Первый"));
+        assertFalse("Имя слишком короткое",
+                checkGreeting2("Привет, Ли Сунь!"));
+        assertFalse("Фамилия слишком короткая",
+                checkGreeting2("Привет, Куй Ли!"));
+        assertFalse("Должны быть указаны и имя, и фамилия",
+                checkGreeting2("Привет, Петр!"));
+        assertFalse("Первая буква имени должна быть заглавной",
+                checkGreeting2("Привет, петр Первый!"));
+        assertFalse("Первая буква фамилии должна быть заглавной",
+                checkGreeting2("Привет, Петр первый!"));
     }
 }
