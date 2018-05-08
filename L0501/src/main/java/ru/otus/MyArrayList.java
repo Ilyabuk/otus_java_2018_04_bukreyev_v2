@@ -1,20 +1,17 @@
 package ru.otus;
 
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
+import java.util.function.UnaryOperator;
 
 /**
  * Created otusjava by Ilya on 5/1/18.
  */
 public class MyArrayList<T> implements List<T> {
 
-
     @Override
     public int size() {
-        throw new RuntimeException();
+        return 0;
     }
 
     @Override
