@@ -66,7 +66,7 @@ public class SampleObject
         final String[] strings = {emptyString, string, "Dustin"};
         final String[] moreStrings = new String[1000];
         final List<String> someStrings = new ArrayList<String>();
-        final BigDecimal bd = new BigDecimal("999999999999999999.99999999");
+        final BigDecimal bd = new BigDecimal("999999999999999999.999999999");
         final Calendar calendar = Calendar.getInstance();
 
         printInstrumentationSize(b);
