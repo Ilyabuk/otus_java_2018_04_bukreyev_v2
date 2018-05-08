@@ -25,6 +25,7 @@
         <module>L0302</module>
         <module>L0303</module>
         <module>L0501</module>
+        <module>L03011</module>
     </modules>
 
     <dependencyManagement>

@@ -15,7 +15,7 @@ import java.util.List;
  * Build up some sample objects and throw them at the Instrumentation example.
  *
  * Might run this class as shown next:
- * java -Xms10g -Xmx10g -javaagent:otus-courses-agent.jar -jar otus-courses-agent-jar-with-dependencies.jar
+ * java -Xms10g -Xmx10g -javaagent:L03-01-1.jar -jar L03-01-1-jar-with-dependencies.jar
  *
  */
 public class SampleObject
@@ -48,6 +48,8 @@ public class SampleObject
     public static void main(final String[] arguments)
     {
         final byte b = 5;
+        final int c = 1;
+        final short cc = 22;
         final Integer[] integers = new Integer[Integer.MAX_VALUE/2];
         final StringBuilder sb = new StringBuilder(1000);
         final boolean falseBoolean = false;
@@ -68,6 +70,8 @@ public class SampleObject
         final Calendar calendar = Calendar.getInstance();
 
         printInstrumentationSize(b);
+        printInstrumentationSize(c);
+        printInstrumentationSize(cc);
         printInstrumentationSize(integers);
         printInstrumentationSize(sb);
         printInstrumentationSize(falseBoolean);
