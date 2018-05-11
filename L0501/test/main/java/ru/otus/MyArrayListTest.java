@@ -2,7 +2,7 @@ package main.java.ru.otus;
 
 import ru.otus.MyArrayList;
 
-import org.junit.Before;
+//import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -15,7 +15,7 @@ public class MyArrayListTest {
     private List<Integer> myList;
     private List<Integer> etalonList;
 
-    @Before
+//    @Before
     public void init() {
         myList = new MyArrayList<>();
         etalonList = Arrays.asList(0, 4, 2);
