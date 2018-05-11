@@ -1,32 +1,32 @@
 package main.java.ru.otus;
 
-import ru.otus.MyArrayList;
-
-//import org.junit.Before;
+import org.junit.Before;
 import org.junit.Test;
+import ru.otus.MyArrayList;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Collections.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 public class MyArrayListTest {
     private List<Integer> myList;
-    private List<Integer> etalonList;
+    private List<Integer> normList;
 
-//    @Before
+    @Before
     public void init() {
         myList = new MyArrayList<>();
-        etalonList = Arrays.asList(0, 4, 2);
+        normList = Arrays.asList(4, 0, 2);
     }
 
     @Test
     public void AddAllTest() {
         addAll(myList, 0, 4, 2);
 
-        assertEquals(etalonList.size(), myList.size());
-        assertEquals(etalonList.get(0), myList.get(0));
+        assertEquals(normList.size(), myList.size());
+        assertEquals(normList.get(0), myList.get(0));
     }
 
     @Test
@@ -35,10 +35,10 @@ public class MyArrayListTest {
         myList.add(6);
         myList.add(10);
 
-        copy(etalonList, myList);
+        copy(normList, myList);
 
-        assertEquals(etalonList.size(), 3);
-        assertEquals(etalonList.get(1), new Integer(6));
+        assertEquals(normList.size(), 3);
+        assertEquals(normList.get(1), new Integer(6));
     }
 
     @Test
@@ -48,8 +48,9 @@ public class MyArrayListTest {
         myList.add(0);
 
         sort(myList);
-        sort(etalonList);
+        sort(normList);
 
-        assertEquals(etalonList.size(), myList.size());
+        assertEquals(normList.size(), myList.size());
+//        assertArrayEquals(myList.toArray(), normList.toArray());
     }
 }
