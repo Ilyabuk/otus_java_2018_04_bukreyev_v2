@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Collections.*;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class MyArrayListTest {
     private List<Integer> myList;
@@ -51,5 +51,6 @@ public class MyArrayListTest {
         sort(etalonList);
 
         assertEquals(etalonList.size(), myList.size());
+        assertArrayEquals(etalonList.toArray(), myList.toArray());
     }
 }
