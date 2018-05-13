@@ -1,25 +1,25 @@
 package ru.otus;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
  * Created otusjava by Ilya on 5/1/18.
  */
 public class MyArrayList<T> implements List<T> {
-    private final static int INITIAL_CAPACITY = 10;
+
+    final private int INITIAL_SIZE = 16;
     private int size;
     private Object[] data;
 
-    public MyArrayList() {
-        data = new Object[INITIAL_CAPACITY];
+    public MyArrayList(int initSize) {
+        data = new Object[initSize];
+        size = 0;
     }
 
-    public MyArrayList(int capacity) {
-        if (capacity >= 0) {
-            data = new Object[capacity];
-        } else {
-            throw new IllegalArgumentException("Not valid capacity");
-        }
+    public MyArrayList() {
+        data = new Object[INITIAL_SIZE];
+        size = 0;
     }
 
     @Override
@@ -29,12 +29,12 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     @Override
     public boolean contains(Object o) {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -44,7 +44,7 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        return Arrays.copyOf(data, size);
     }
 
     @Override
@@ -167,5 +167,16 @@ public class MyArrayList<T> implements List<T> {
             cursor = i + 1;
             return (T) elementData[lastRet = i];
         }
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+        for(Object e : data) {
+            if (e!=null) {
+                s += e.toString() + ", ";
+            }
+        }
+        return s;
     }
 }

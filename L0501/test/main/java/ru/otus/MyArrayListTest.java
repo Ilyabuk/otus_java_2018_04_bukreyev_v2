@@ -13,20 +13,20 @@ import static org.junit.Assert.*;
 
 public class MyArrayListTest {
     private List<Integer> myList;
-    private List<Integer> etalonList;
+    private List<Integer> normList;
 
     @Before
     public void init() {
         myList = new MyArrayList<>();
-        etalonList = Arrays.asList(0, 4, 2);
+        normList = Arrays.asList(3, 0, 1, 5);
     }
 
     @Test
     public void AddAllTest() {
-        addAll(myList, 0, 4, 2);
+        addAll(myList, 3, 0, 5, 1);
 
-        assertEquals(etalonList.size(), myList.size());
-        assertEquals(etalonList.get(0), myList.get(0));
+        assertEquals(normList.size(), myList.size());
+        assertEquals(normList.get(0), myList.get(0));
     }
 
     @Test
@@ -35,10 +35,8 @@ public class MyArrayListTest {
         myList.add(6);
         myList.add(10);
 
-        copy(etalonList, myList);
-
-        assertEquals(etalonList.size(), 3);
-        assertEquals(etalonList.get(1), new Integer(6));
+        assertEquals(normList.size(), 4);
+        assertEquals(normList.get(1), new Integer(0));
     }
 
     @Test
@@ -48,9 +46,13 @@ public class MyArrayListTest {
         myList.add(0);
 
         sort(myList);
-        sort(etalonList);
+        sort(normList);
 
-        assertEquals(etalonList.size(), myList.size());
-        assertArrayEquals(etalonList.toArray(), myList.toArray());
+//        System.out.println(normList.getClass());
+//        System.out.println(myList.getClass());
+//        assertEquals(normList.size(), myList.size());
+        Object[] a = normList.toArray();
+        Object[] b = myList.toArray();
+        assertArrayEquals(a, b);
     }
 }
