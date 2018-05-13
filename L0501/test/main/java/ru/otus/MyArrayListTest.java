@@ -31,12 +31,18 @@ public class MyArrayListTest {
 
     @Test
     public void CopyTest() {
-        myList.add(1);
-        myList.add(6);
-        myList.add(10);
+//        myList.add(1);
+//        myList.add(6);
+//        myList.add(10);
+//        myList.add(3);
+
+        System.out.println(normList);
+        copy(myList,normList);
+        System.out.println(myList.toString());
 
         assertEquals(normList.size(), 4);
         assertEquals(normList.get(1), new Integer(0));
+
     }
 
     @Test
