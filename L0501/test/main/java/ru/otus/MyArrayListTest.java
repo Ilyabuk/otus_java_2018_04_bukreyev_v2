@@ -31,14 +31,9 @@ public class MyArrayListTest {
 
     @Test
     public void CopyTest() {
-//        myList.add(1);
-//        myList.add(6);
-//        myList.add(10);
-//        myList.add(3);
+        addAll(myList, 1,6,10,3);
 
-        System.out.println(normList);
         copy(myList,normList);
-        System.out.println(myList.toString());
 
         assertEquals(normList.size(), 4);
         assertEquals(normList.get(1), new Integer(0));
@@ -47,18 +42,11 @@ public class MyArrayListTest {
 
     @Test
     public void SortTest() {
-        myList.add(4);
-        myList.add(2);
-        myList.add(0);
+        addAll(myList, 1, 3, 0, 5);
 
         sort(myList);
         sort(normList);
 
-//        System.out.println(normList.getClass());
-//        System.out.println(myList.getClass());
-//        assertEquals(normList.size(), myList.size());
-        Object[] a = normList.toArray();
-        Object[] b = myList.toArray();
-        assertArrayEquals(a, b);
+        assertArrayEquals(myList.toArray(), normList.toArray());
     }
 }

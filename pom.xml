@@ -28,16 +28,6 @@
         <module>L03011</module>
     </modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>otus-courses</groupId>
-                <artifactId>L03-01</artifactId>
-                <version>1</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <build>
         <plugins>
             <plugin>
