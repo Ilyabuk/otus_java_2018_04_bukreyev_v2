@@ -5,6 +5,7 @@ import org.junit.Test;
 import ru.otus.MyArrayList;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static java.util.Collections.addAll;
@@ -44,6 +45,7 @@ public class MyArrayListTest {
     public void SortTest() {
 
         addAll(myList, 1, 3, 0, 5);
-        assertEquals(Integer.valueOf(1), myList.get(0));
+        Collections.sort(myList);
+        assertEquals(Integer.valueOf(0), myList.get(0));
     }
 }

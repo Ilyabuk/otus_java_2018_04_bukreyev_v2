@@ -1,12 +1,11 @@
 package ru.otus;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
  * Created otusjava by Ilya on 5/1/18.
  */
-public class MyArrayList<T> implements List<T> {
+public class MyArrayList<T> implements List<T>, Comparator {
 
     final private int INITIAL_SIZE = 16;
     private int size;
@@ -147,6 +146,19 @@ public class MyArrayList<T> implements List<T> {
         return null;
     }
 
+    @Override
+    public int compare(Object o1, Object o2) {
+        int i = 0;
+        int k = 0;
+        try {
+            i = (int) o1;
+            k = (int) o2;
+        } catch (ClassCastException error) {
+            System.out.printf("%s", error);
+        }
+        return Integer.compare(i, k);
+    }
+
     private class MyIterator implements Iterator<T> {
         private int cursor;
         private int lastRet = -1;
@@ -172,11 +184,17 @@ public class MyArrayList<T> implements List<T> {
     @Override
     public String toString() {
         String s = "";
-        for(Object e : data) {
-            if (e!=null) {
+        for (Object e : data) {
+            if (e != null) {
                 s += e.toString() + ", ";
             }
         }
         return s;
     }
+
+//    @Override
+//    public void sort(Comparator<? super T> c) {
+//        Integer[] array = (Integer[]) data;
+//        c.
+//    }
 }
