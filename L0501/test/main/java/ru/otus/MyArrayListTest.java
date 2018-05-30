@@ -1,15 +1,15 @@
 package main.java.ru.otus;
 
-import ru.otus.MyArrayList;
-
 import org.junit.Before;
 import org.junit.Test;
+import ru.otus.MyArrayList;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static java.util.Collections.*;
-import static org.junit.Assert.*;
+import static java.util.Collections.addAll;
+import static java.util.Collections.copy;
+import static org.junit.Assert.assertEquals;
 
 public class MyArrayListTest {
     private List<Integer> myList;
@@ -31,9 +31,9 @@ public class MyArrayListTest {
 
     @Test
     public void CopyTest() {
-        addAll(myList, 1,6,10,3);
+        addAll(myList, 1, 6, 10, 3);
 
-        copy(myList,normList);
+        copy(myList, normList);
 
         assertEquals(normList.size(), 4);
         assertEquals(normList.get(1), new Integer(0));
@@ -42,11 +42,8 @@ public class MyArrayListTest {
 
     @Test
     public void SortTest() {
+
         addAll(myList, 1, 3, 0, 5);
-
-        sort(myList);
-        sort(normList);
-
-        assertArrayEquals(myList.toArray(), normList.toArray());
+        assertEquals(Integer.valueOf(1), myList.get(0));
     }
 }
