@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created otusjava by Ilya on 5/1/18.
  */
-public class MyArrayList<T> implements List<T>, Comparator {
+public class MyArrayList<T> implements List<T> {
 
     final private int INITIAL_SIZE = 16;
     private int size;
@@ -146,18 +146,6 @@ public class MyArrayList<T> implements List<T>, Comparator {
         return null;
     }
 
-    @Override
-    public int compare(Object o1, Object o2) {
-        int i = 0;
-        int k = 0;
-        try {
-            i = (int) o1;
-            k = (int) o2;
-        } catch (ClassCastException error) {
-            System.out.printf("%s", error);
-        }
-        return Integer.compare(i, k);
-    }
 
     private class MyIterator implements Iterator<T> {
         private int cursor;
@@ -192,9 +180,8 @@ public class MyArrayList<T> implements List<T>, Comparator {
         return s;
     }
 
-//    @Override
-//    public void sort(Comparator<? super T> c) {
-//        Integer[] array = (Integer[]) data;
-//        c.
-//    }
+    @Override
+    public void sort(Comparator<? super T> c) {
+        Arrays.sort((T[]) data, 0, size, c);
+    }
 }
