@@ -2,11 +2,11 @@ package main.java.ru.otus;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.otus.IamComparable;
+import ru.otus.IamNotComparable;
 import ru.otus.MyArrayList;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static java.util.Collections.addAll;
 import static java.util.Collections.copy;
@@ -47,5 +47,38 @@ public class MyArrayListTest {
         addAll(myList, 1, 3, 0, 5);
         Collections.sort(myList);
         assertEquals(Integer.valueOf(0), myList.get(0));
+    }
+
+    @Test //nothing checked, just example
+    public void NotComparable() {
+        List<IamNotComparable> n = new ArrayList<>();
+        n.add(new IamNotComparable("Petya", 4));
+        n.add(new IamNotComparable("Michanya", 1));
+        n.add(new IamNotComparable("Dimon", 6));
+        n.add(new IamNotComparable("Vovka", 2));
+
+        System.out.println(n);
+//        Collections.sort(n); error!
+        Collections.sort(n, new Comparator<IamNotComparable>() {
+            @Override
+            public int compare(IamNotComparable o1, IamNotComparable o2) {
+                return Integer.compare(o1.getId(), o2.getId());
+            }
+        });
+
+        System.out.println(n);
+    }
+
+    @Test
+    public void WellComparable() {
+        List<IamComparable> n = new ArrayList<>();
+        n.add(new IamComparable("Petya", 4));
+        n.add(new IamComparable("Michanya", 1));
+        n.add(new IamComparable("Dimon", 6));
+        n.add(new IamComparable("Vovka", 2));
+
+        System.out.println(n);
+        Collections.sort(n); //now it works!
+        System.out.println(n);
     }
 }
