@@ -59,17 +59,12 @@ public class MyArrayListTest {
 
         System.out.println(n);
 //        Collections.sort(n); error!
-        Collections.sort(n, new Comparator<IamNotComparable>() {
-            @Override
-            public int compare(IamNotComparable o1, IamNotComparable o2) {
-                return Integer.compare(o1.getId(), o2.getId());
-            }
-        });
+        Collections.sort(n, (o1, o2) -> Integer.compare(o1.getId(), o2.getId()));
 
         System.out.println(n);
     }
 
-    @Test
+    @Test //nothing checked, just example
     public void WellComparable() {
         List<IamComparable> n = new ArrayList<>();
         n.add(new IamComparable("Petya", 4));
